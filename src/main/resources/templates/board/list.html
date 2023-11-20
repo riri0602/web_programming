@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div th:insert="common/header.html" id="header"></div>
+
+<div class="main">
+
+
+            <table class="table" align="center" bordercolor="black">
+
+
+                <colgroup>
+                    <col width="20%">
+                    <col width="30%">
+                    <col width="30%">
+                    <col width="30%">
+                </colgroup>
+
+                <tr class="text-center">
+                    <th scope="col">No.</th>
+                    <th scope="col"> Title </th>
+                    <th scope="col"> Author </th>
+                    <th scope="col"> Date </th>
+                </tr>
+
+                <tbody>
+
+                <tr align="center" class="text-center" th:each="post : ${postList}">
+
+                    <td scope="col">
+                        <span th:text="${post.id}"></span>
+                    </td>
+
+                    <td>
+                        <a th:href="@{'/post/write/' + ${post.id}}">
+                            <span th:text="${post.title}"></span>
+                        </a>
+                    </td>
+
+                    <td>
+                        <span th:text="${post.author}"></span>
+                    </td>
+
+                    <td>
+                        <span th:text="${#temporals.format(post.createdDate, 'yyyy-MM-dd HH:mm')}"></span>
+                    </td>
+                </tr>
+
+                </tbody>
+
+            </table>
+
+            <br>
+        <div class="container">
+            <form action="/post/write" method="get">
+            <div class="col-md-7">
+                <div class="col-auto mr-auto"></div>
+                <div class="col-auto">
+                    <input class="btn btn-primary" type="submit" role="button" value="Posting">
+                </div>
+            </div>
+            </form>
+        </div>
+
+        <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</div>
+
+    <div th:insert="common/footer.html" id="footer"></div>
+
+</body>
+</html>

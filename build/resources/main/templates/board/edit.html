@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div th:insert="common/header.html" id="header"></div>
+
+<div class="main">
+
+        <div class="container">
+            <form th:action="@{'/post/edit/' + ${post.id}}" method="post">
+                <input type="hidden" name="_method" value="put"/>
+                <input type="hidden" name="id" th:value="${post.id}"/>
+
+                <div class="form-group row">
+                    <label for="inputTitle" class="col-12 col-form-label"><strong> Title ▶ </strong></label>
+                    <div class="col-12">
+                        <input type="text" name="title" class="form-control" id="inputTitle" th:value="${post.title}">
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="form-group row">
+                    <label for="inputAuthor" class="col-12 col-form-label"><strong> Author ▶ </strong></label>
+                    <div class="col-12">
+                        <input type="text" name="author" class="form-control" id="inputAuthor" th:value="${post.author}" readonly>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="form-group row">
+                    <label for="inputContent" class="col-12 col-form-label"><strong> Contents ▶ </strong></label>
+                    <div class="col-12">
+                        <textarea type="text" name="content" class="form-control" cols="40" rows="10" id="inputContent"th:value="${post.content}"></textarea>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row" align="right">
+                    <div class="col-auto mr-auto"></div>
+                    <div class="col-auto">
+                        <input class="btn btn-primary" type="submit" role="button" value="Edit">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</div>
+
+<div th:insert="common/footer.html" id="footer"></div>
+
+</body>
+</html>

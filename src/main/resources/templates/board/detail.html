@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div th:insert="common/header.html" id="header"></div>
+
+<div class="main">
+
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title" th:text="@{${post.title}}"></h1>
+                    <hr><h3 class="card-text" th:text="@{${post.author}}"></h3>
+                    <h4 class="card-text"><small class="text-muted" th:text="${#temporals.format(post.createdDate, 'yyyy-MM-dd HH:mm')}"></small></h4>
+                    <br>
+                    <p class="card-text" th:text="${post.content}"></p>
+                </div>
+            </div>
+            <br>
+
+            <br>
+
+            <div class="row mt-3">
+
+                <form th:action="@{'/post/edit/' + ${post.id}}" method="get">
+                <div class="row">
+                    <div class="col-auto mr-auto"></div>
+                    <div class="col-auto">
+                        <input class="btn btn-primary" type="submit" role="button" value="Edit">
+                    </div>
+                </div>
+                </form>
+
+                <br>
+
+                <div class="col-auto">
+                    <form id="delete-form" th:action="@{'/post/write/' + ${post.id}}" method="post">
+                        <input type="hidden" name="_method" value="delete"/>
+                        <button id="delete-btn" type="submit" class="btn btn-danger">Delete</button><br>
+                    </form>
+                </div>
+
+                <br>
+
+                    <form action="/post" method="get">
+                        <div class="col-md-7">
+                            <div class="col-auto mr-auto"></div>
+                            <div class="col-auto">
+                                <input class="btn btn-primary" type="submit" role="button" value="◀ Back">
+                            </div>
+                        </div>
+                    </form>
+
+            </div>
+        </div>
+
+        <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</div>
+
+<div th:insert="common/footer.html" id="footer"></div>
+
+</body>
+</html>

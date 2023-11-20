@@ -1,0 +1,6 @@
+<div class="navbar">
+    <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a th:href="@{/post}"><i class="fa fa-fw fa-pencil"></i> Post</a>
+    <a sec:authorize="isAnonymous()" th:href="@{/user/login}"><i class="fa fa-fw fa-user"></i> Login</a>
+    <a sec:authorize="isAuthenticated()" th:href="@{/user/logout}"><i class="fa fa-fw fa-user"></i> Logout</a>
+</div>

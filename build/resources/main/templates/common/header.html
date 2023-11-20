@@ -1,0 +1,152 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>My Blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='/webjars/bootstrap/4.5.0/css/bootstrap.min.css'>
+    <link href='https://fonts.googleapis.com/css?family=Indie Flower' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+
+        /* Style the body */
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+          margin: 0;
+
+        }
+
+        /* Header/logo Title */
+        .header_h {
+          padding: 80px;
+          background-image: url("https://pbs.twimg.com/media/EpRzvCgUwAIDoFm?format=jpg&name=large");
+          background-color: white;
+          color: white;
+          font-family: 'Indie Flower';
+          text-align: center;
+        }
+
+        /* Increase the font size of the heading */
+        .header_h h1 {
+          font-size: 60px;
+          text-align: center;
+        }
+
+        .navbar {
+          overflow: hidden;
+          background-color: #333;
+          top: 0;
+        }
+
+        /* Style the navigation bar links */
+        .navbar a {
+          float: left;
+          display: block;
+          color: #f2f2f2;
+          padding: 10px 15px;
+          text-decoration: none;
+          font-size: 15px;
+        }
+
+
+        /* Right-aligned link */
+        .navbar a.right {
+          float: right;
+        }
+
+        /* Change color on hover */
+        .navbar a:hover {
+          background-color: #ffc0cb;
+          color: black;
+        }
+
+        /* Active/current link */
+        .navbar a.active {
+          background-color: #ff9eaf;
+          color: white;
+        }
+        .content {
+          padding: 16px;
+        }
+
+        .sticky {
+          position: fixed;
+          top: 0;
+          width: 100%;
+        }
+
+        .sticky + .content {
+          padding-top: 60px;
+        }
+
+        /* Column container */
+        .row {
+          display: -ms-flexbox; /* IE10 */
+          display: flex;
+          -ms-flex-wrap: wrap; /* IE10 */
+          flex-wrap: wrap;
+        }
+        /* Main column */
+        .main {
+          background-color: white;
+          padding: 20px;
+        }
+        /* Fake image, just for this example */
+        .fakeimg {
+          background-color: #aaa;
+          width: 100%;
+          padding: 20px;
+        }
+        /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 700px) {
+          .row {
+            flex-direction: column;
+          }
+        }
+
+        /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+        @media screen and (max-width: 400px) {
+          .navbar a {
+            float: none;
+            width: 100%;
+          }
+        }
+        .footer {
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          background-color: #333;
+          color: white;
+          text-align: center;
+          font-family: 'Indie Flower';
+          padding: 20px;
+          font-size: 17px;
+        }
+        table {
+        width: 100%;
+        border-top: 1px solid #444444;
+        border-collapse: collapse;
+      }
+      th, td {
+        border-bottom: 1px solid #444444;
+        padding: 10px;
+        text-align: center;
+      }
+      th {
+        background-color: #333;
+        color: white;
+      }
+</style>
+</head>
+<body>
+<div th:insert="common/sidebar.html" id="sidebar"></div>
+
+<div class="header_h">
+    <h1>♥ My Happy Blog ♥</h1>
+    <h2>A <b>responsive</b> website created by me.</h2>
+</div>
+
+<div th:insert="common/navbar.html" id="navbar"></div>
+

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Register</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Indie Flower' rel='stylesheet'>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name = "google-signin-client_id" content = "871175091915-5f6mklld6bd0qjfdcim9odaa4ukf7spt.apps.googleusercontent.com">
+    <style type="text/css">
+        body {
+          background: #ffc0cb;
+          font-family: arial;
+        }
+        .login-form h1 {
+          font-size: 36px;
+          text-align: center;
+          color: #ff9eaf;
+          margin-bottom: 30px;
+          font-weight: normal;
+        }
+        .login-form .social-icon {
+            width: 100%;
+            font-size: 20px;
+            padding-top: 20px;
+            color: #fff;
+            text-align: center;
+            float: left;
+        }
+        .login-form {
+            background: #fff;
+            width: 450px;
+            border-radius: 6px;
+            margin: 0 auto;
+            display: table;
+            padding: 15px 30px 30px;
+            box-sizing: border-box;
+        }
+        .form-group {
+          float: left;
+          width: 100%;
+          margin: 0 0 15px;
+          position: relative;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 5px;
+            height: 56px;
+            border-radius: 74px;
+            border: 1px solid #ff9eaf;
+            box-sizing: border-box;
+            font-size: 15px;
+            padding-left: 75px;
+        }
+        .login-form .form-group .input-icon {
+            font-size: 15px;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            border-radius: 25px;
+            bottom: 0;
+            height: 100%;
+            padding-left: 35px;
+            color: #333;
+        }
+        .login-form .signup-btn {
+          background: #333;
+          padding: 11px 50px;
+          border-color: #333;
+          color: #ff9eaf;
+          text-align: center;
+          margin: 0 auto;
+          font-size: 20px;
+          border: 1px solid #ff9eaf;
+          border-radius: 44px;
+          width: 100%;
+          height: 56px;
+          cursor: pointer;
+        }
+        .login-form .social-icon button {
+            font-size: 20px;
+            color: white;
+            height: 50px;
+            width: 50px;
+            border-radius: 60%;
+            margin: 0px 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .login-form button:hover{
+          opacity: 0.7;
+        }
+        .login-form .seperator {
+          float: left;
+          width: 100%;
+          border-top: 1px solid #ccc;
+          text-align: center;
+          margin: 50px 0 0;
+        }
+        .login-form .seperator b {
+          width: 40px;
+          height: 40px;
+          font-size: 16px;
+          text-align: center;
+          line-height: 40px;
+          background: #fff;
+          display: inline-block;
+          border: 1px solid #ff9eaf;
+          border-radius: 50%;
+          position: relative;
+          top: -22px;
+          z-index: 1;
+        }
+        .login-form p {
+          float: left;
+          width: 100%;
+          text-align: center;
+          font-size: 16px;
+          margin: 0 0 10px;
+        }
+        @media screen and (max-width:767px) {
+        .login-form {
+            width: 90%;
+            padding: 15px 15px 30px;
+        }
+        }
+        *.icon-google {
+        color: #f44336
+        }
+        *.icon-twitter {
+        color: #00acee
+        }
+</style>
+</head>
+<body>
+<br>
+<form th:action="@{/user/signup}" method="post">
+    <div class="login-form">
+        <h1>Register</h1>
+
+        <div class="form-group">
+            <input type="text" name="name" class="validate" placeholder="Your Name"/>
+            <span class="input-icon"><i class="fa fa-user"></i></span>
+        </div>
+
+        <div class="form-group">
+            <input type="text" name="email" class="validate" placeholder="Your Email"/>
+            <span class="input-icon"><i class="fa fa-envelope"></i></span>
+        </div>
+
+        <div class="form-group">
+            <input type="password" name="password" class="validate" placeholder="Password"/>
+            <span class="input-icon"><i class="fa fa-lock"></i></span>
+        </div>
+
+        <input class="signup-btn" type="submit" value="Register" />
+    </div>
+
+</form>
+
+</body>
+</html>
